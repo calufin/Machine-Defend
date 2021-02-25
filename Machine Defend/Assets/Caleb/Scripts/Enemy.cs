@@ -17,14 +17,14 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * 0.05f);
+        transform.Translate(Vector3.left * 0.08f);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == "Finish")
+        if(collision.transform.tag == "Bullet")
         {
-            player.health = player.health - 10;
+            Destroy(this.gameObject);
         }
     }
 }
